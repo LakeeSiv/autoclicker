@@ -1,2 +1,2 @@
 run:
-	g++ a.cpp && a.exe
+	g++ -o clicker clicker.cpp && ./clicker.exe
