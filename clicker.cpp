@@ -11,8 +11,16 @@ void description(){
 void clicker(){
     for (;;){
         if (GetKeyState('X') & 0x8000){
-            cout << "a";
+            mouse_event(MOUSEEVENTF_RIGHTDOWN, 0, 0, 0,0);
+            mouse_event(MOUSEEVENTF_RIGHTUP, 0, 0, 0,0);
+            Sleep(10);
         }
+        if (GetKeyState('Z') & 0x8000){
+            mouse_event(MOUSEEVENTF_LEFTDOWN, 0, 0, 0,0);
+            mouse_event(MOUSEEVENTF_LEFTUP, 0, 0, 0,0);
+            Sleep(10);
+        }
+
     }
 };
 
