@@ -21,16 +21,31 @@ void description() {
 };
 
 void clicker() {
+    bool clickedRight = false;
+    bool clickedLeft = false;
     for (;;) {
+        int randTime = rand() % 50 + 100;
         if (GetKeyState('X') & 0x8000) {
-            mouse_event(MOUSEEVENTF_RIGHTDOWN, 0, 0, 0, 0);
-            mouse_event(MOUSEEVENTF_RIGHTUP, 0, 0, 0, 0);
-            Sleep(10);
+            clickedRight = !clickedRight;
+            cout << clickedRight;
         }
         if (GetKeyState('Z') & 0x8000) {
+            clickedLeft = !clickedLeft;
+            cout << clickedLeft;
+        }
+
+        if (clickedRight) {
+            mouse_event(MOUSEEVENTF_RIGHTDOWN, 0, 0, 0, 0);
+            mouse_event(MOUSEEVENTF_RIGHTUP, 0, 0, 0, 0);
+            Sleep(1000);
+            // cout << randTime << "\n";
+        }
+
+        if (clickedLeft) {
             mouse_event(MOUSEEVENTF_LEFTDOWN, 0, 0, 0, 0);
             mouse_event(MOUSEEVENTF_LEFTUP, 0, 0, 0, 0);
             Sleep(10);
+
         }
 
     }
