@@ -15,9 +15,9 @@ void description() {
         cout << line << '\n';
     }
 
-    cout << "\n";
-    cout << "Hold down X to right click\n";
-    cout << "Hold down Z to left click\n";
+    cout << "\n\n\n\n";
+    cout << "Press X to right click\n";
+    cout << "Press Z to left click\n";
 };
 
 void clicker() {
@@ -27,10 +27,22 @@ void clicker() {
         int randTime = rand() % 200 / 4 + 250 / 4;
         if (GetKeyState('X') & 0x8000) {
             clickedRight = !clickedRight;
+            if (clickedRight) {
+                cout << "Right Click Toggled on\n";
+            }
+            else {
+                cout << "Right Click Toggled off\n";
+            }
             Sleep(200);
         }
         if (GetKeyState('Z') & 0x8000) {
             clickedLeft = !clickedLeft;
+            if (clickedLeft) {
+                cout << "Left Click Toggled on\n";
+            }
+            else {
+                cout << "Left Click Toggled off\n";
+            }
             Sleep(200);
         }
 
