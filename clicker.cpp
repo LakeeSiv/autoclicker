@@ -4,12 +4,22 @@
 using std::cout;
 
 void description(){
-    cout << "X to enable right click\n";
-    cout << "Z to disable right click\n";
+    cout << "Hold down X to right click\n";
+    cout << "Hold down Z to left click\n";
 };
+
+void clicker(){
+    for (;;){
+        if (GetKeyState('X') & 0x8000){
+            cout << "a";
+        }
+    }
+};
+
 
 int main(){
     description();
+    clicker();
     return 0;
 }
 
