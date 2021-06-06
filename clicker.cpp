@@ -1,9 +1,21 @@
 #include <iostream>
 #include <Windows.h>
+#include <fstream>
+#include <string>
 
 using std::cout;
+using std::string;
 
 void description() {
+    std::ifstream fin("ascii.txt");
+    string line;
+
+    while (std::getline(fin, line))
+    {
+        cout << line << '\n';
+    }
+
+    cout << "\n";
     cout << "Hold down X to right click\n";
     cout << "Hold down Z to left click\n";
 };
