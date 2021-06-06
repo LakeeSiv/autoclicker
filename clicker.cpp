@@ -24,14 +24,14 @@ void clicker() {
     bool clickedRight = false;
     bool clickedLeft = false;
     for (;;) {
-        int randTime = rand() % 50 + 100;
+        int randTime = rand() % 200 / 4 + 250 / 4;
         if (GetKeyState('X') & 0x8000) {
             clickedRight = !clickedRight;
-            cout << clickedRight;
+            Sleep(200);
         }
         if (GetKeyState('Z') & 0x8000) {
             clickedLeft = !clickedLeft;
-            cout << clickedLeft;
+            Sleep(200);
         }
 
         if (clickedRight) {
@@ -44,7 +44,7 @@ void clicker() {
         if (clickedLeft) {
             mouse_event(MOUSEEVENTF_LEFTDOWN, 0, 0, 0, 0);
             mouse_event(MOUSEEVENTF_LEFTUP, 0, 0, 0, 0);
-            Sleep(10);
+            Sleep(randTime);
 
         }
 
