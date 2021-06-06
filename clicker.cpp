@@ -35,7 +35,7 @@ void clicker() {
         //     }
         //     Sleep(200);
         // }
-        if (GetKeyState('Z') & 0x8000) {
+        if (GetKeyState('F') & 0x8000) {
             clickedLeft = !clickedLeft;
             if (clickedLeft) {
                 cout << "Left Click Toggled on\n";
