@@ -16,7 +16,7 @@ void description() {
     }
 
     cout << "\n\n\n\n";
-    cout << "Press X to right click\n";
+    // cout << "Press X to right click\n";
     cout << "Press F to left click\n";
 };
 
@@ -24,7 +24,8 @@ void clicker() {
     bool clickedRight = false;
     bool clickedLeft = false;
     for (;;) {
-        int randTime = rand() % 200 / 4 + 250 / 4;
+        float n = rand() % 1 + 4.5;
+        float randTime = rand() % 200 / n + 250 / n;
         // if (GetKeyState('X') & 0x8000) {
         //     clickedRight = !clickedRight;
         //     if (clickedRight) {
