@@ -40,9 +40,12 @@ void clicker() {
             clickedLeft = !clickedLeft;
             if (clickedLeft) {
                 cout << "Left Click Toggled on\n";
+                Beep(523, 500);
             }
             else {
                 cout << "Left Click Toggled off\n";
+                Beep(300, 500);
+                cout << '\a';
             }
             Sleep(200);
         }
