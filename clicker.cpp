@@ -45,7 +45,6 @@ void clicker() {
             else {
                 cout << "Left Click Toggled off\n";
                 Beep(300, 500);
-                cout << '\a';
             }
             Sleep(200);
         }
