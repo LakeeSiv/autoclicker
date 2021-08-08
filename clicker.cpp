@@ -16,7 +16,7 @@ void description() {
     }
 
     cout << "\n\n\n\n";
-    // cout << "Press X to right click\n";
+    cout << "Press X to right click\n";
     cout << "Press F to left click\n";
 };
 
@@ -26,25 +26,25 @@ void clicker() {
     for (;;) {
         float n = rand() % 1 + 4.5;
         float randTime = rand() % 200 / n + 250 / n;
-        // if (GetKeyState('X') & 0x8000) {
-        //     clickedRight = !clickedRight;
-        //     if (clickedRight) {
-        //         cout << "Right Click Toggled on\n";
-        //     }
-        //     else {
-        //         cout << "Right Click Toggled off\n";
-        //     }
-        //     Sleep(200);
-        // }
+        if (GetKeyState('X') & 0x8000) {
+            clickedRight = !clickedRight;
+            if (clickedRight) {
+                cout << "Right Click Toggled on\n";
+            }
+            else {
+                cout << "Right Click Toggled off\n";
+            }
+            Sleep(200);
+        }
         if (GetKeyState('F') & 0x8000) {
             clickedLeft = !clickedLeft;
             if (clickedLeft) {
                 cout << "Left Click Toggled on\n";
-                Beep(523, 500);
+                /* Beep(523, 500); */
             }
             else {
                 cout << "Left Click Toggled off\n";
-                Beep(300, 500);
+                /* Beep(300, 500); */
             }
             Sleep(200);
         }
@@ -52,7 +52,7 @@ void clicker() {
         if (clickedRight) {
             mouse_event(MOUSEEVENTF_RIGHTDOWN, 0, 0, 0, 0);
             mouse_event(MOUSEEVENTF_RIGHTUP, 0, 0, 0, 0);
-            Sleep(1000);
+            Sleep(5);
             // cout << randTime << "\n";
         }
 
